@@ -15,6 +15,8 @@ public class RegexHomeTask {
         String text = "<html>\n" +
                 "<body>\n" +
                 "<p>This is the test paragraph</p>\n" +
+                "<a href= http://www.zik.ua>ZIK</a>" +
+                "<p>This is another test paragraph</p>" +
                 "</body>\n" +
                 "</html>";
         String pattern = "<p>[^<]+";
@@ -29,10 +31,10 @@ public class RegexHomeTask {
         while (m.find()) {
             s = text.substring(m.start(), m.end());
             if (!s.isEmpty()) {
-                System.out.print("Founded matching text: " + s);
+                System.out.println("Founded matching text: " + s);
                 list.add(s.replace("<p>", ""));
             }
         }
-        System.out.println("\n"+"The text of paragraph is: "+ list);
+        System.out.println("\n"+"The text of paragraphs is: "+ list);
     }
 }
